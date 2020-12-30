@@ -1,0 +1,505 @@
+# using input in python
+fn = input('Your name?\n')
+ag = input('Your age?\n')
+gen = input('Gender?\n')
+print(fn.title().strip() + ' is a ' + ag.strip() + ' yr(s) old', gen.strip() + '.')
+
+# mail assignment
+first_name = 'ADESola'
+second_name = 'OluWasegun'
+middle_name = 'EmMAnuel'
+full_name = first_name.strip() +',' + ' ' + second_name.strip() + ' ' + middle_name.strip() +','
+name = full_name.upper()
+message = 'Dear {} \n \nGTWORLD LOG IN CONFIRMATION\n \nPlease be informed that your GTWORLD profile was accessed at 07:00:00 PM, (GMT+1) December 13, 2019.\n \nIf you did not log on to your GTWORLD profile at the time detailed above, please call GTCONNECT; our 24 hour interactive contact centre on: +234 700 482666328 or send an email to e-fraudteam@gtbank.com immediately.\n \nThank you for banking with us.\n \nGuaranty Trust Bank'.format(name)
+print(message)
+
+# writing between strings
+a = 'Sege'
+b = 'Lola'
+message = 'We cordially invite you to the wedding ceremony of {} and {} scheduled to hold 20th December, 2019.'.format(a,b)
+print(message)
+
+# multiplying strings
+space = ' ' * 25
+address = '{}16 Aina Falege Street\n{}Agiliti Estate, Mile 12\n{}Lagos state.'.format(space,space,space)
+message = 'Dear Sir\n \nI wish to thank you for your support. God bless you.\n \nRegards\nAdesola O.E.'
+print(address)
+print(message)
+
+# Tax Income Assignment
+#GI= Gross income  ND= Number of dependents TI= Taxable Income
+GI = float(input('Enter Gross Income:\n'))
+ND = int(input('Enter number of dependents:\n'))
+TI = GI - 10000 - (3000 * ND)
+Income_Tax = 0.2 * TI
+print('THE INCOME TAX IS $',(Income_Tax)) 
+
+# Introduction to lists
+friends = ['Muhammed', 'Ikayh', 'Habib', 'Ijebu']
+friends[2] = 'Funmi'
+friends.insert(0, 'Shade')
+friends.insert(3, 'Bisi')
+friends.append('Bola')
+#notice lists work in sequence
+#popping (0) makes the entire index change hence assigning new index to the elements.
+n1 = friends.pop(0)
+print("I'm sorry to uninvite " + n1)
+print(friends)
+n2 = friends.pop(5)
+print("I'm sorry to uninvite " + n2)
+print(friends)
+n3 = friends.pop(2)
+print("I'm sorry to uninvite " + n3)
+print(friends)
+n4 = friends.pop(2)
+print("I'm sorry to uninvite " + n4)
+print(friends)
+n5 = friends.pop(2)
+print("I'm sorry to uninvite " + n5)
+print(friends)
+print(friends[0] + ' and ' + friends[1] + ' are still invited to dinner. I expect to see you at 7.')
+#note the repeating [0] index
+del friends[0]
+del friends[0]
+print(friends)
+
+#arranging a list
+location = ['brazil', 'france', 'canada', 'australia', 'usa']
+location.reverse()
+location.reverse()
+locate = sorted(location, key=len) #the key=len is used to allow arrngment of words based on length
+print(locate)
+
+#using len
+friends = ['Muhammed', 'Ikayh', 'Habib', 'Ijebu']
+print('I will be inviting just ' + str(len(friends)) + ' friends to dinner tonight.')
+
+#LISTS and LOOPING
+friends = ['Muhammed', 'Ikayh', 'Habib', 'Ijebu']
+for friend in friends:
+    print('I love you ' + friend + '.')
+    print("I can't wait to see you", friend + '.\n')
+
+#making LISTS of even and odd numbers btw 1 and 10
+even_numbers = list(range(2,11,2)) 
+#the range func starts with the 1st 2 and adds the last '2' repeatedly till it reaches 11 where it stops
+odd_numbers = list(range(1,11,2))
+#the range func starts with the 1 and adds the last '2' repeatedly till it reaches 11 where it stops
+print(even_numbers)
+print(odd_numbers)
+
+#square.py
+squares = []
+for value in range(1,6):
+    squares.append(value**2)
+print(squares)
+
+#list comprehension
+numbers = [no**3 for no in range(1,11)]
+print(numbers)
+
+#copying lists
+pizzas = ['Domino', 'Biggs', 'Pepperoni']
+friend_pizzas = pizzas[:]
+pizzas.append('Tantalizer')
+friend_pizzas.append('KFC')
+print('My favorite pizzas are:')
+for pi in pizzas:
+    print(pi)
+print("\nMy friend's favorite pizzas are:")
+for zz in friend_pizzas:
+    print(zz)
+
+----------------------------------------------------------
+
+#IF STATEMENTS
+
+#Simple IF statements
+buffet = ('rice', 'salad', 'turkey', 'veggies')
+for buff in buffet:
+    if buff == 'salad':
+        print('I love',buff.upper() + '!')
+    else:
+        print('I love',buff.title() + '!')
+
+#simple IF statements
+age = int(input('Enter your age:\n'))
+if age >= 18:
+    print('Welcome Marlian')
+else:
+    print('Alaye gbe body eh')
+
+# if-elif-else ___amusement park
+age = int(input('Enter age:\n'))
+if age < 4:
+    price = 0
+elif age < 18:
+    price = 5
+else:
+    price = 10
+print('Admission cost is $' + str(price) + '.')
+
+# omitting else statement
+age = int(input('Enter age:\n'))
+if age < 4:
+    price = 0
+elif age < 18:
+    price = 5
+elif age < 65:
+    price = 10
+elif age >= 65:
+    price = 5
+print('Admission cost is $' + str(price) + '.')
+
+#Stages of life exercise
+name = input('Your name:\n')
+age = int(input('Enter age:\n'))
+if age < 2:
+    life = "baby"
+elif age == 2 or age < 4:
+    life = "toddler"
+elif age == 4 or age < 13:
+    life = "kid"
+elif age == 13 or age < 20:
+    life = 'teenager'
+elif age == 20 or age < 65:
+    life = 'adult'
+else:
+    life = 'elder'
+print(name.title().strip() + ', you are a/an ' + life + '.')
+
+#Checking USERNAMES
+current_u = ['Tobi', 'Shade', 'Ola', 'Ali', 'Dele']
+new_u = ['Fatai', 'shade', 'Subomi', 'ola', 'Simbi']
+
+for new in new_u:
+    if new.title() in current_u:
+        print(new.title() + ', username already in use')
+    else:
+        print(new + ', username available')
+
+#Checking USERNAMES 2
+reg_u = ['Tunde', 'Pelumi', 'Emmanuel', 'Victor']
+new_u = input('Enter username:\n')
+
+if new_u.title() in reg_u:
+    print('Sorry, username already in use.\nKindly choose another.\n')
+else:
+    print('Welcome ' + new_u.title() + '!\nPlease wait will we prepare your account\n')
+    reg_u.append(new_u.title())
+    reg_u.sort()
+print(reg_u)
+        
+#ORDINAL numbers
+ numbers = list(range(1,10))
+for num in numbers:
+    if num == 1:
+        val = 'st'
+    elif num == 2:
+        val = 'nd'
+    elif num == 3:
+        val = 'rd'
+    else:
+        val = 'th'
+    print('This is the ' + str(num) + val+ ' number in the list.')
+
+----------------------------------------------------------------------------------
+
+# DICTIONARIES
+
+#Simple Dictionary
+username = {
+    'name': 'Tobiloba',
+    'first': 'Tobi',
+    'last': 'Oloba',
+    }
+for k,v in username.items():    
+#to loop btw dictionaries for keys or values only we use .keys() or .values() rather than .items()
+    print('key: ' + k + '\nValue: ' + v + '\n')
+
+#Looping through a dictionary
+username = {
+    'shade': 'mathematician',
+    'tobi': 'Linguist',
+    'bodu': 'eNgineer',
+    }
+for name, career in username.items():
+    print(name.title() + ' will like to become a/an ' + career.lower())
+
+#Looping through keys and values
+languages = {
+    'niger': 'nigeria',
+    'benue': 'nigeria',
+    'nile': 'egypt',
+    'mississipi': 'mexico',
+    }
+print('The names of the rivers in my lists are:')
+for key in languages.keys():
+    print(key.title())
+    
+print('\nThe names of the rivers in my lists are:')
+for value in languages.values():
+    print(value.title())
+
+# exercise 6-6
+languages = {
+    'tobi': 'python',
+    'shade': 'vbasic',
+    'lola': 'java',
+    'dolapo': 'c++',
+    }
+
+friends = ['dolapo', 'yusuf', 'dami', 'lola']
+
+for friend in friends:
+    if friend.lower() in languages.keys():
+        print('Hey ' + friend.title() + ', thank you for responding!')
+    else:
+        print('Hey ' + friend.title() + ', you need to take the poll!')
+
+#Nesting exercise
+aliens = []
+#range() func was to make the program loop 30 times 
+for alien_no in range(30):
+    new_alien = {'color': 'red', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+
+for alien in aliens[:5]: #to print the first 5 items from aliens list
+    print(alien)
+print('Total number of aliens = ' + str(len(aliens)))
+
+#changing alien color
+aliens = []
+for alien_no in range(30):
+    new_alien = {'color': 'red', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+
+for alien in aliens[:5]:
+    if alien['color'] == 'red':
+        alien['color'] = 'yellow'
+        alien['points'] = 10
+        alien['speed'] = 'fast'
+        
+for alien in aliens[:8]:
+    print(alien)
+
+#a list in a dictionary
+languages = {
+    'tobi': ['python', 'ruby'],
+    'shade': ['vbasic', 'c'],
+    'lola': ['java', 'codec'],
+    'dolapo': ['c++', 'haskell'],
+    }
+for name, lang in languages.items(): #to access the keys and values in the dict
+    print('\n' + name.title() + "'s favorite languages are:")
+    for lan in lang: 
+#since we defined the values in dict-languages as lang, we can loop thru lang rather than languages.values()
+        print('\t' + lan.title())
+
+#exercise 6-9
+favorite_places = {
+    'tunde': ['egypt', 'togo', 'rome'],
+    'segun': ['miami', 'california', 'australia'],
+    'tobi': ['denmark', 'sweden', 'austria'],
+    }
+for people, places in favorite_places.items():
+    print('\n' + people.title() + "'s favorite places on earth are:")
+    for place in sorted(places): #for sorting through the places in an order
+        print(place.title())
+
+#exercise 6-11-12
+#dont forget to add commas after {} to avoid syntax errors
+cities = {
+    'los angeles': {
+        'country': 'usa',
+        'population': '30 million',
+        'fact': 'city of cards',
+        },
+    
+    'lagos': {
+        'country': 'nigeria',
+        'population': '40 million',
+        'fact': 'commercial hub',
+        },
+
+    'paris': {
+        'country': 'france',
+        'population': '25 million',
+        'fact': 'city of love',
+        },
+    }
+cities['kattegat'] = {
+    'country': 'sweden',
+        'population': '5 million',
+        'fact': 'city of vikings',
+        }
+
+for city, value in cities.items():
+    print('\nThese are info on ' + city.title() + ':')
+    if value['country'] == 'usa':
+        print('Location: ' + value['country'].upper())
+    else:
+        print('Location: ' + value['country'].title())
+    print('Population: ' + value['population'])
+    print('Fact: ' + value['fact'])
+
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+#USER INPUT AND WHILE LOOPS
+
+#Even_or_odd.py
+
+#you can use the modulo operator to determine if a number is even or odd
+num = input("Enter a numer, let's decide if its even or odd:\n")
+num = int(num)
+if num % 2 == 0:
+    print('EVEN')
+else:
+    print('ODD')
+
+---------------------------
+#counting.py
+curr_number = 2 #starting point
+while curr_number <= 20: #the while loop allows the code run for as long as curr <= 20
+    print(curr_number)
+    curr_number += 2 # the += operator adds 2 to curr_number
+
+----------------------------
+#writing a while loop
+
+prompt = "Do you want some Hallelujah?!"
+prompt += "\nEnter 'stop' to end program\n"
+message = ""
+while message != 'stop':
+    message = input(prompt)
+    if message != 'stop':
+        print(message)
+
+-----------------------------------------------
+#using a flag in while looping
+space = ' ' * 10
+prompt = "Enter number we'll check if its even or odd:{}(Enter 'stop' to end)\n".format(space)
+cond = True
+while cond:
+    message = input(prompt)
+    if message == 'stop':
+        cond = False
+    elif int(message) % 2 == 0:
+        print('EVEN\n')
+    elif int(message) % 2 != 0:
+        print('ODD\n')
+
+.................................................
+#using break statement in loops
+space = ' ' * 10
+prompt = "Enter name of where you spent your holiday:{}(Enter 'stop' to end)\n".format(space)
+cond = True
+while cond:
+    message = input(prompt)
+    if message == 'stop':
+        break
+    else:
+        print('You went to ' + message.title() + '. How nice!\n')
+
+-------------------------------------------------------------------
+#using continue statement in loops
+#continue statement is used to return to the beginning of the loop based on the result of a conditional test.
+
+num = 1
+while num < 10:
+    num += 1
+    if num % 2 != 0:
+        continue
+    print(num)
+
+-----------------------------------------------------------------------------
+#exercise 7-5
+
+space = ' ' * 8
+prompt = "Enter your age:{}(Enter 'quit' to stop)\n".format(space)
+while True:
+    message = input(prompt)
+    if message == 'quit':
+        break
+    elif int(message) < 3:
+        price = 0
+    elif int(message) <= 12:
+        price = 10
+    elif int(message) > 12:
+        price = 15
+        
+    print('Your ticket will cost you $' + str(price) + '.\n') 
+
+---------------------------------------------------------------------
+#exercise 7-6
+
+space = ' ' * 8
+prompt = "Enter your age:{}(Enter 'quit' to stop)\n".format(space)
+cond = True
+while cond:
+    message = input(prompt)
+    if message == 'quit':
+        cond = False
+    elif int(message) < 3:
+        price = 0
+        print('Your ticket will cost you $' + str(price) + '.\n')
+    elif int(message) <= 12:
+        price = 10
+        print('Your ticket will cost you $' + str(price) + '.\n')
+    elif int(message) > 12:
+        price = 15
+        print('Your ticket will cost you $' + str(price) + '.\n')
+ 
+
+.....................................
+#Greatest footballer poll
+
+user_responses = {}
+
+cond = True
+while cond:
+    name = input('\nWhat is your name?\n')
+    response = input('Who is your greatest football?\n')
+    user_responses[name] = response
+    prompt = input('Are you the last on the list? yes/no\n')
+    if prompt == 'yes':
+        cond = False
+    print('\nThanks for your response ' + name.title() + '!')
+    
+print('\n---Results for polling!---')
+for key, value in user_responses.items():
+    print(key.title() + "'s greatest football in the world is " +
+          value.title() + '.')
+
+----------------------------------------------
+#Exercise 7-8
+
+sandwich_orders = ['buttercrust', 'pepperoni', 'butterfield', 'mushfries']
+finished_sandwiches = []
+while sandwich_orders:
+    orders = sandwich_orders.pop()
+    finished_sandwiches.append(orders)
+    print('Making your ' + orders.title() + ' sandwich!')
+print('\n')
+for sandwich in finished_sandwiches:
+    print("We've finished your " + sandwich.title() + 'sandwich.')
+
+-----------------------------------------------
+#Exercise 7-9
+
+sandwich_orders = ['buttercrust', 'pastrami','pepperoni', 'pastrami','butterfield', 'pastrami','mushfries']
+finished_sandwiches = []
+print('We have run outta Pastrami\n')
+while 'pastrami' in sandwich_orders:
+    sandwich_orders.remove('pastrami')
+while sandwich_orders:
+    orders = sandwich_orders.pop()
+    finished_sandwiches.append(orders)
+    print('Making your ' + orders.title() + ' sandwich!')
+print('\nREADY SANDWICHES\n')
+for sandwich in finished_sandwiches:
+    print("We've finished your " + sandwich.title() + ' sandwich.')
+
+-------------------------------------------------------
+#Exercise 7-10
+
